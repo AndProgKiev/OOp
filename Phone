@@ -1,0 +1,48 @@
+public class Phone {
+    private String name;
+    private int number;
+
+    public Phone(String name, int number) {
+        this.name = name;
+        this.number = number;
+    }
+    public Phone(){
+        this.name="no name";
+        this.number=0;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void registrationNumber(){
+        Network.addPhone(number);
+    }
+
+    public void toCall(int number){
+        if(Network.isCallProcessing(number)){
+            System.out.println("Вызов идет");
+        }else System.out.println("Ошибочно набранный номер");
+
+    }
+
+    public void receiveCall(){
+        if(Network.toSendCall()==this.number){
+            System.out.println("Вызов принят");
+        }
+    }
+
+
+}
