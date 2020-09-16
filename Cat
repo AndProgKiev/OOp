@@ -44,3 +44,4 @@ public class Cat {
                 ", ageInYears=" + ageInYears +
                 '}';
     }
+}
