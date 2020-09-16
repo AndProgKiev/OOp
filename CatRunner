@@ -1,0 +1,11 @@
+public class CatRunner {
+    public static void main(String[] args) {
+        Cat cat1=new Cat("Tom",5);
+        Cat cat2=new Cat("kitty",0);
+
+        cat1.setAgeInYears(1);
+        System.out.println(cat1.getName());
+        cat1.saySomething();
+        cat2.sayGavGav();
+    }
+}
