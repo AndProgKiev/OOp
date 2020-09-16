@@ -1,6 +1,7 @@
 public class Phone {
     private String name;
     private int number;
+    private final String call ="Вызов идет";
 
     public Phone(String name, int number) {
         this.name = name;
@@ -27,22 +28,28 @@ public class Phone {
         return number;
     }
 
-    public void registrationNumber(){
-        Network.addPhone(number);
+
+
+    public void tryToCall(int number){
+        if (Network.isNumberRegistration(this.number)) {
+            if (Network.isCallProcessing(number)) {
+                System.out.println("Абонент успешно совершил вызов");
+
+            } else System.out.println("Ошибочно набранный номер");
+        }else System.out.println("Ваш номер не зарегистрирован в сети");
     }
-
-    public void toCall(int number){
-        if(Network.isCallProcessing(number)){
-            System.out.println("Вызов идет");
-        }else System.out.println("Ошибочно набранный номер");
-
+    public void toCall(){
+        System.out.println("Вызов идет");
     }
-
     public void receiveCall(){
-        if(Network.toSendCall()==this.number){
-            System.out.println("Вызов принят");
-        }
+        System.out.println("Вызов принят");
     }
 
-
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "name='" + name + '\'' +
+                ", number=" + number +
+                '}';
+    }
 }
