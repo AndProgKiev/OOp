@@ -1,33 +1,38 @@
-import java.util.ArrayList;
-
 public class Network {
    private final String name="ProgStar";
-    private static int [] listPhone=new int[10];
-    private static int count=0;
-    private static int  numberToSend;
+    private static Phone[] listPhone2=new Phone[10];
+    private static int countPhone=0;
 
 
-    public static void addPhone(int number){
-      listPhone[count]=number;
-      count++;
+    public static void addPhone(Phone phone){
+      listPhone2[countPhone]=phone;
+      countPhone++;
     }
 
     public static boolean isCallProcessing(int number){
         boolean is=false;
-        for (int i = 0; i <count; i++) {
-            if(listPhone[i]==number){
+        for (int i = 0; i <countPhone; i++) {
+            if(listPhone2[i].getNumber()==number){
                 is=true;
-                numberToSend=number;
+                break;
+
+            }
+            listPhone2[i].toCall();
+            listPhone2[i].receiveCall();
+        }
+
+        return is;
+    }
+    public static boolean isNumberRegistration(int number){
+        boolean is=false;
+        for (int i = 0; i <countPhone; i++) {
+            if(listPhone2[i].getNumber()==number){
+                is=true;
 
             }
         }
         return is;
     }
-
-    public static int toSendCall(){
-        return numberToSend;
-    }
-
 
 
 
