@@ -1,0 +1,13 @@
+public class PhoneRunner {
+    public static void main(String[] args) {
+        Phone phone1=new Phone("Apple",0442021);
+        Phone phone2=new Phone("Apple",0443044);
+
+        phone1.registrationNumber();
+        phone2.registrationNumber();
+
+        phone1.toCall(0443044);
+        phone2.receiveCall();
+
+    }
+}
