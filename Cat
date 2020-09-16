@@ -1,0 +1,46 @@
+public class Cat {
+    private String name;
+    private int ageInYears;
+
+
+    Cat(){
+        name=" no name";
+        ageInYears=0;
+    }
+
+    Cat(String name,int ageInYears){
+        this.name=name;
+        this.ageInYears=ageInYears;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAgeInYears() {
+        return ageInYears;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAgeInYears(int ageInYears) {
+        this.ageInYears = ageInYears;
+    }
+
+    public void saySomething(){
+        System.out.println("Мяу-мяу");
+    }
+
+    public void sayGavGav(){
+        System.out.println("Мяу-мяу");
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", ageInYears=" + ageInYears +
+                '}';
+    }
