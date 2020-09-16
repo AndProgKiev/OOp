@@ -3,11 +3,12 @@ public class PhoneRunner {
         Phone phone1=new Phone("Apple",0442021);
         Phone phone2=new Phone("Apple",0443044);
 
-        phone1.registrationNumber();
-        phone2.registrationNumber();
+        Network.addPhone(phone1);
+        Network.addPhone(phone2);
 
-        phone1.toCall(0443044);
-        phone2.receiveCall();
+        phone1.tryToCall(0443044);
+
 
     }
 }
+
