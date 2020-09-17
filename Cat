@@ -3,12 +3,12 @@ public class Cat {
     private int ageInYears;
 
 
-    Cat(){
+    public Cat(){
         name=" no name";
         ageInYears=0;
     }
 
-    Cat(String name,int ageInYears){
+    public Cat(String name,int ageInYears){
         this.name=name;
         this.ageInYears=ageInYears;
     }
